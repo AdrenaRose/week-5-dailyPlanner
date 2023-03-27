@@ -9,11 +9,6 @@ let plans03 = document.querySelector("#description03");
 let plans04 = document.querySelector("#description04");
 let plans05 = document.querySelector("#description05");
 
-$("#currentDay").text(today.format("dddd, MMM D, YYYY"));
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
 plans9.value = localStorage.getItem("myPlans9");
 plans10.value = localStorage.getItem("myPlans10");
 plans11.value = localStorage.getItem("myPlans11");
@@ -23,6 +18,8 @@ plans02.value = localStorage.getItem("myPlans02");
 plans03.value = localStorage.getItem("myPlans03");
 plans04.value = localStorage.getItem("myPlans04");
 plans05.value = localStorage.getItem("myPlans05");
+
+$("#currentDay").text(today.format("dddd, MMM D, YYYY"));
 
 $(".saveBtn9").click(function () {
   localStorage.setItem("myPlans9", plans9.value);
@@ -60,24 +57,74 @@ $(".saveBtn05").click(function () {
   localStorage.setItem("myPlans05", plans05.value);
 });
 
-// function
-// TODO: Add a listener for click events on the save button. This code should
-// use the id in the containing time-block as a key to save the user input in
-// local storage. HINT: What does `this` reference in the click listener
-// function? How can DOM traversal be used to get the "hour-x" id of the
-// time-block containing the button that was clicked? How might the id be
-// useful when saving the description in local storage?
-//
-// TODO: Add code to apply the past, present, or future class to each time
-// block by comparing the id to the current hour. HINTS: How can the id
-// attribute of each time-block be used to conditionally add or remove the
-// past, present, and future classes? How can Day.js be used to get the
-// current hour in 24-hour time?
-//
-// TODO: Add code to get any user input that was saved in localStorage and set
-// the values of the corresponding textarea elements. HINT: How can the id
-// attribute of each time-block be used to do this?
-//
-//   // TODO: Add code to display the current date in the header of the page.
+if (dayjs("12/12/1200 9:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-9").classList.add("future");
+} else if (dayjs("12/12/1200 9:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-9").classList.add("past");
+} else {
+  document.querySelector("#hour-9").classList.add("present");
+}
 
-//each button should have a unique identifier to easier target in the dom
+if (dayjs("12/12/1200 10:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-10").classList.add("future");
+} else if (dayjs("12/12/1200 10:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-10").classList.add("past");
+} else {
+  document.querySelector("#hour-10").classList.add("present");
+}
+
+if (dayjs("12/12/1200 11:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-11").classList.add("future");
+} else if (dayjs("12/12/1200 11:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-11").classList.add("past");
+} else {
+  document.querySelector("#hour-11").classList.add("present");
+}
+
+if (dayjs("12/12/1200 12:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-12").classList.add("future");
+} else if (dayjs("12/12/1200 12:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-12").classList.add("past");
+} else {
+  document.querySelector("#hour-12").classList.add("present");
+}
+
+if (dayjs("12/12/1200 13:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-13").classList.add("future");
+} else if (dayjs("12/12/1200 13:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-13").classList.add("past");
+} else {
+  document.querySelector("#hour-13").classList.add("present");
+}
+
+if (dayjs("12/12/1200 14:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-14").classList.add("future");
+} else if (dayjs("12/12/1200 14:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-14").classList.add("past");
+} else {
+  document.querySelector("#hour-14").classList.add("present");
+}
+
+if (dayjs("12/12/1200 15:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-15").classList.add("future");
+} else if (dayjs("12/12/1200 15:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-15").classList.add("past");
+} else {
+  document.querySelector("#hour-15").classList.add("present");
+}
+
+if (dayjs("12/12/1200 16:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-16").classList.add("future");
+} else if (dayjs("12/12/1200 16:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-16").classList.add("past");
+} else {
+  document.querySelector("#hour-16").classList.add("present");
+}
+
+if (dayjs("12/12/1200 17:00").format("HH") > dayjs().format("HH")) {
+  document.querySelector("#hour-17").classList.add("future");
+} else if (dayjs("12/12/1200 17:00").format("HH") < dayjs().format("HH")) {
+  document.querySelector("#hour-17").classList.add("past");
+} else {
+  document.querySelector("#hour-17").classList.add("present");
+}
